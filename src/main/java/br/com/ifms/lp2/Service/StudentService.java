@@ -26,12 +26,8 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public String deleteStudent(Long id){
-        var aluno = studentRepository.findById(id);
-        if(aluno.get().getId() > 0){
-            studentRepository.deleteById(id);
-        }
-        return "Estudante não encontrado";
+    public void deleteStudent(Long id){
+        studentRepository.deleteById(id);
     }
 
 }
